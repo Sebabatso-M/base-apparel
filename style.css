@@ -15,12 +15,11 @@
 body {
     font-weight: 300;
     font-family: 'Josefin Sans',
-    sans-serif;
+        sans-serif;
     background: hsl(0, 100%, 98%);
-    position: relative;
 }
 
-#bg-pattern{
+#bg-pattern {
     display: none;
 }
 
@@ -63,7 +62,7 @@ p {
     color: var(--desaturatedRed);
 }
 
-form {
+#input {
     text-align: left;
     padding: 0 2.0625rem;
     position: relative;
@@ -76,6 +75,7 @@ form {
     background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
     position: absolute;
     right: 2rem;
+    box-shadow: 0 3px 8px 2px hsl(0, 80%, 86%);
 }
 
 #submit:hover {
@@ -85,7 +85,8 @@ form {
 .email {
     border: 1px solid var(--desaturatedRed);
     padding: 0.9375rem 1.625rem;
-    padding-right: 3.875rem;
+    padding-right: 4.3rem;
+    margin-bottom: 1.5rem;
     border-radius: 25px;
     outline: none;
     width: 100%;
@@ -96,9 +97,9 @@ form {
     color: var(--desaturatedRed);
 }
 
-.error {
+.error .email {
     border-color: var(--softRed);
-    padding-right: calc(3.875rem + 40px);
+    padding-right: calc(3.9rem + 33px);
 }
 
 #err-img {
@@ -112,30 +113,40 @@ form {
     color: var(--softRed);
     font-size: 0.6875rem;
     position: absolute;
-    bottom: -20px;
+    bottom: 5px;
     left: calc(2.0625rem + 1.625rem);
     display: none;
 }
 
+.error #err-img {
+    display: inline;
+}
+
+.error #error-text {
+    display: inline-block;
+}
+
 @media screen and (min-width: 978px) {
-    #bg-pattern{
-        display:inline-block;
+    #bg-pattern {
+        display: inline-block;
         position: absolute;
-        left:-60px;
+        left: -4%;
+        top: -1%;
         z-index: -1;
     }
-    
+
     #grid {
         display: grid;
-        grid-template-columns: auto 48.5%;
+        grid-template-columns: calc(51.5% - 13rem) 48.5%;
         grid-template-rows: auto;
         grid-template-areas:
             "a b"
-            "c b"
-            "d d";
+            "c b";
         padding-left: 9.5625rem;
         min-height: 100vh;
         column-gap: 13rem;
+        position: relative;
+        overflow: hidden;
     }
 
     #logo {
@@ -156,7 +167,7 @@ form {
         text-align: left;
     }
 
-    #content>span{
+    #content>span {
         font-size: 3.5rem;
     }
 
@@ -167,25 +178,25 @@ form {
         line-height: 1.8;
     }
 
-    form {
+    #input {
         text-align: left;
         padding: 0;
     }
 
-    #submit{
+    #submit {
         padding: 0.89rem 2.5rem;
         right: 0;
     }
 
-    .email{
+    .email {
         padding-right: 5.8rem;
     }
 
-    .error{
+    .error .email{
         padding-right: calc(5.8rem + 34px);
     }
 
-    #error-text{
+    #error-text {
         left: 1.625rem;
     }
 
